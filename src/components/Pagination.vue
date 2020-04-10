@@ -32,6 +32,8 @@
               case '下一页':
                 this.$refs[`btn${this.currentPage}`][0].nextElementSibling.click()
                 break;
+                case '首页':
+                  this.$refs[`btn1`][0].click()
             }
             return
           }
@@ -56,32 +58,31 @@
 
 <style scoped>
   .pagination{
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: .3125rem;
+    margin-bottom: 1.25rem;
     background-color: white;
-    padding: 6px 20px;
-    border-radius: 5px;
-    /*box-shadow: 0px 2px 9px #888888;*/
-    border: 1px solid #888888;
+    padding: .375rem 1.25rem;
+    border-radius: .3125rem;
+    border: .0625rem solid #888888;
   }
   li{
     display: inline;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: .0625rem solid #ddd;
     color: #778087;
-    border-radius: 3px;
+    border-radius: .1875rem;
     outline: none;
-    height: 21px;
+    height: 1.3125rem;
     cursor: pointer;
-    padding: 0 2px;
-    width: 55px;
-    height: 29px;
+    padding: 0.125rem;
+    width: 3.4375rem;
+    height: 1.8125rem;
   }
   .pagebtn{
     position: relative;
-    bottom: 1px;
-    width: 40px;
-    margin: 0 4px;
+    bottom: .0625rem;
+    width: 2.5rem;
+    margin: 0.25rem;
   }
   .currentPage {
     color: white;

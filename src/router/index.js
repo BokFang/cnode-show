@@ -4,6 +4,7 @@ import Article from '../components/Article'
 import Postlist from "../components/Postlist";
 import UserInfo  from "../components/UserInfo";
 import SlideBar  from "../components/SlideBar";
+import BeginnersGuide  from "../components/BeginnersGuide";
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +29,13 @@ export default new Router({
       path:'/userinfo/:name',
       components:{
         main:UserInfo,
+      }
+    },
+    {
+      name:'Beginners_Guide',
+      path:'/BeginnersGuide/',
+      components:{
+        main:BeginnersGuide,
       }
     },
   ]

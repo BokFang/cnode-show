@@ -84,10 +84,11 @@
     }
 </script>
 
-<style >
+<style>
   @import url('../assets/markdown-github.css');
-  .panel{
-    margin-right: 305px;
+  .article-wrapper{
+    display: flex;
+    flex-direction: column;
   }
   a:hover{
     text-decoration: underline;
@@ -156,7 +157,8 @@
     font-size: 14px;
   }
   .reply-name{
-    font-size: 12px;
+    font-size: .75rem;
+    padding: 0 .5rem;
     font-weight: 700;
     color: #666;
   }

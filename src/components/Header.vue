@@ -8,10 +8,8 @@
           </a>
         </router-link>
         <ul>
-          <li><router-link :to="{
-            name:'root',
-          }">首页</router-link></li>
-          <li><a href="#">新手入门</a></li>
+          <li><router-link :to="{name:'root',}">首页</router-link></li>
+          <li><router-link :to="{name:'Beginners_Guide'}">新手入门</router-link></li>
           <li><a href="#">API</a></li>
           <li><a href="#">关于</a></li>
           <li><a href="#">注册</a></li>
@@ -35,21 +33,27 @@
   .container{
     width: 90%;
     margin: auto;
-    padding: 5px;
+    padding: .3125rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
   }
   .img{
-    padding: 6px 20px 0 0;
+    padding: .375rem 1.25rem 0 0;
 
   }
   img{
-    max-width: 120px;
-    padding: 3px 0;
+    width: 7.5rem;
+    padding: 0.1875rem 0;
+  }
+  ul>li>a:hover{
+    color: white;
   }
   li>a{
     text-decoration:none;
     color: #ccc;
-    padding: 10px 15px;
-    font-size: 13px;
+    padding: 0.625rem .9375rem;
+    font-size: .8125rem;
   }
   li{
     list-style: none;
@@ -57,10 +61,10 @@
   }
   header{
     background-color: #444;
-    height: 50px;
+    padding-bottom: .125rem;
+
   }
   ul{
-    float: right;
-    padding-top: 10px;
+    padding-top: .625rem;
   }
 </style>

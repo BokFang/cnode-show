@@ -34,7 +34,7 @@
               params:{
                 id:create.id
               }
-            }">
+            }" class="create-title">
               <span class="create-title">{{create.title}}</span>
             </router-link>
             <span class="last-create">{{create.last_reply_at|formatDate}}</span>
@@ -51,7 +51,7 @@
               params:{
                 id:join.id
               }
-            }">
+            }" class="join-title">
               <span class="join-title">{{join.title}}</span>
             </router-link>
             <span class="last-join">{{join.last_reply_at|formatDate}}</span>
@@ -91,12 +91,23 @@
 </script>
 
 <style scoped>
+  @media (max-width: 500px){
+    .create-title,.join-title{
+      display: inline-block;
+      max-width: 75%;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-left: .5rem;
+    }
+  }
   li{
     list-style: none;
   }
   .loading {
     text-align: center;
-    padding-top: 300px;
+    padding-top: 18.75rem;
   }
   a{
     text-decoration: none;
@@ -104,21 +115,17 @@
 
   .user-main {
     width: 90%;
-    max-width: 1400px;
-    min-width: 960px;
-    margin: 15px auto;
-    min-height: 400px;
+    margin: .9375rem auto;
   }
 .panel{
-  margin-bottom: 13px;
-  margin-right: 305px;
+  margin-bottom: .8125rem;
   }
   .header{
-    padding: 10px;
+    padding: .625rem;
     background-color: #f6f6f6;
-    border-radius: 3px 3px 0 0;
+    border-radius: .1875rem .1875rem 0 0;
     color: #80bd01;
-    font-size: 14px;
+    font-size: .875rem;
   }
   .create_topic,.join-topic{
     color:#444;
@@ -127,52 +134,59 @@
     color: #80bd01;
   }
   .divider{
-    padding: 0 5px;
+    padding: 0 .3125rem;
     color: #ccc;
   }
   .page-content{
-    padding: 10px;
+    padding: .625rem;
     border-top: 1px solid #e5e5e5;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 .1875rem .1875rem;
     background-color: #fff;
   }
   .user_avatar {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     vertical-align: middle;
-    border-radius: 3px;
+    border-radius: .1875rem;
   }
   .login-name{
     color: #778087;
-    font-size: 14px;
+    font-size: .875rem;
+    padding: .5rem;
   }
   .score{
     color:#333;
-    font-size: 14px;
+    font-size: .875rem;
   }
   .information{
-    margin-top: 10px;
+    margin-top: .625rem;
   }
   .information li{
     line-height: 2em;
   }
   .create-time{
     color: #ababab;
-    font-size: 14px;
+    font-size: .875rem;
   }
   .photo{
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
   }
   .inner{
-    padding-right: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-right: .625rem;
     background: #fff;
-    border-top: 1px solid #f0f0f0;
-    padding:10px;
+    border-top: .0625rem solid #f0f0f0;
+    padding:.625rem;
   }
   .create-title,.join-title{
     color: #08c;
-    padding-left: 25px;
+    padding-left: .5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
   }
   .create-title:hover{
     text-decoration: underline;
@@ -182,7 +196,10 @@
   }
   .last-create,.last-join{
     color:#777;
-    font-size: 11px;
-    float: right;
+    font-size: .6875rem;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
   }
 </style>

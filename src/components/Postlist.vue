@@ -35,7 +35,7 @@
               id:post.id,
               name:post.author.loginname
             }
-          }">
+          }" class="title">
             <span class="title">{{post.title}}</span>
           </router-link>
           <span class="reply-time">{{post.last_reply_at | formatDate}}</span>
@@ -85,90 +85,115 @@
 </script>
 
 <style scoped>
+  @media (max-width: 500px){
+    .reply-time{
+      position: absolute;
+      right: 3rem;
+      color:#778087;
+      font-size: .6875rem;
+    }
+    .title{
+      display: inline-block;
+      max-width: 70%;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
   .loading {
     text-align: center;
-    padding-top: 300px;
-    padding-bottom: 600px;
+    padding-top: 18.75rem;
+    padding-bottom: 37.5rem;
   }
   a{
     text-decoration: none;
   }
   .main-header{
     list-style: none;
-    padding: 10px;
+    padding: 0.65rem;
     background-color: #f6f6f6;
-    border-radius: 3px 3px 0 0;
+    border-radius: 0.1875rem 0.1875rem 0 0;
   }
   .main-header span{
     color: #80bd01;
-    padding: 3px 4px;
-    border-radius: 3px;
-    font-size: 14px;
-    margin: 0 10px;
+    padding: 0.1875rem .25rem;
+    border-radius: 0.1875rem;
+    font-size: .875rem;
+    margin: 0.625rem;
   }
 li:not(:first-child){
-  padding-right: 10px;
   background: #fff;
-  border-top: 1px solid #f0f0f0;
-  padding: 10px 10px 10px 10px;
-  font-size: 14px;
+  border-top: .0625rem solid #f0f0f0;
+  padding: 0.625rem;
+  font-size: .875rem;
   list-style: none;
-  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
 }
   .portrait{
-    width: 30px;
-    height: 30px;
-    border-radius: 3px;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 0.1875rem;
   }
   img{
     vertical-align: middle;
   }
   .count-wrapper{
     display: inline-block;
-    width: 70px;
+    width: 4.735rem;
     text-align: center;
-    height: 30px;
-    line-height: 30px;
+    height: 1.875rem;
+    line-height: 1.875rem;
   }
   .reply-count{
     color:#9e78c0;
-    font-size:14px;
+    font-size:.875rem;
 
   }
   .visit-count{
     color:#b4b4b4;
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .title{
     display: inline-block;
     color:#333;
-    font-size: 16px;
+    font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
     vertical-align: middle;
+    text-overflow: ellipsis;
   }
   .title:hover{
     text-decoration: underline;
   }
   .reply-time{
-    float:right;
-  }
-  .reply-time{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
     color:#778087;
-    font-size: 11px;
+    font-size: .6875rem;
   }
   .put_top,.put_good{
+    text-align: center;
+    width:2rem;
+    height: 1.15rem;
     background: #80bd01;
-    padding: 2px 4px;
-    border-radius: 3px;
+    border-radius: 0.1875rem;
     color: #fff;
-    font-size: 12px;
+    font-size: .75rem;
+    margin-right: .3125rem;
   }
   .put_tab{
+    text-align: center;
+    width:2rem;
+    height: 1.15rem;
     background-color: #e5e5e5;
     color: #999;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 12px;
+    border-radius: 0.1875rem;
+    font-size: .75rem;
+    margin-right: .3125rem;
   }
 </style>

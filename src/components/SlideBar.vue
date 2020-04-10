@@ -88,6 +88,11 @@
 </script>
 
 <style scoped>
+  @media(max-width:980px){
+    .sidebar {
+      display: none;
+    }
+  }
   li{
     list-style: none;
   }
@@ -98,10 +103,11 @@
     margin-bottom: 13px;
   }
   .sidebar{
-    float: right;
     width: 290px;
+    float: right;
     font-size: 14px;
     margin-bottom: 20px;
+    margin-left: 1.25rem;
   }
   .header{
     color: #51585c;
@@ -114,16 +120,23 @@
     border-radius: 0 0 3px 3px;
     background-color: #fff;
   }
+  .user-card{
+    display: flex;
+    flex-wrap: wrap;
+  }
   .user-card img{
     width: 48px;
     height: 48px;
     border-radius: 3px;
   }
   .user-name{
-    font-size: 16px;
+    font-size: 1rem;
     color:#778087;
-    vertical-align: middle;
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: .5rem;
+    flex: 1;
   }
   .score{
     margin-top: 10px;

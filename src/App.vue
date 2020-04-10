@@ -11,7 +11,6 @@
 <script>
 import Header from "./components/Header";
 import Postlist from "./components/Postlist";
-import Pagination from "./components/Pagination";
 
 export default {
   name: 'App',
@@ -28,10 +27,8 @@ export default {
     background-color: #e1e1e1;
   }
   .main{
-    width: 90%;
-    max-width: 1400px;
-    min-width: 960px;
-    margin: 15px auto;
-    min-height: 400px;
+    width:90vw;
+    margin: .9375rem auto;
+    min-height: 25rem;
   }
 </style>
