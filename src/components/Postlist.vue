@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" >
     <div class="loading" v-if="isLoading">
       <img src="../assets/loading.gif" >
     </div>
@@ -20,7 +20,7 @@
               id:post.id,
               name:post.author.loginname
             }
-          }"><img :src="post.author.avatar_url" class="portrait">
+          }"><img v-lazy="post.author.avatar_url" class="portrait">
           </router-link> <!--动态绑定属性记得加:-->
           <span class="count-wrapper">
             <span class="reply-count">{{post.reply_count}}</span>
@@ -40,7 +40,7 @@
           </router-link>
           <span class="reply-time">{{post.last_reply_at | formatDate}}</span>
         </li>
-          <Pagination @handleList="renderList"></Pagination>
+        <Pagination @handleList="renderList"></Pagination>
       </ul>
     </div>
   </div>
@@ -49,39 +49,38 @@
 <script>
   import Pagination from "./Pagination";
   export default {
-        name: "Postlist",
-      components:{Pagination},
-        data(){
-          return{
-            posts:[],
-            isLoading:true,
-            postpage:1
+    name: "Postlist",
+    components:{Pagination},
+    data(){
+      return{
+        posts:[],
+        isLoading:true,
+        postpage:1,
+      }
+    },
+    methods:{
+      getData(){
+        this.$http.get('https://cnodejs.org/api/v1/topics',{
+          params:{
+            page:this.postpage,
+            limit:30
           }
-        },
-        methods:{
-            getData(){
-                this.$http.get('https://cnodejs.org/api/v1/topics',{
-                  params:{
-                    page:this.postpage,
-                    limit:30
-                  }
-                })
-                    .then((response)=>{
-                      this.posts = response.data.data
-                      this.isLoading = false
-                    }).catch((error)=>{
-                        console.log(error)
-                })
-            },
-          renderList(value){
-              this.postpage = value
-            this.getData()
-          }
-        },
-        beforeMount() {
-            this.getData()
-        }
+        }).then((response)=>{
+          this.posts = response.data.data
+          this.isLoading = false
+        }).catch((error)=>{
+          console.log(error)
+        })
+      },
+      renderList(value){
+        this.postpage = value
+        this.getData()
+      },
+    },
+    beforeMount() {
+      this.getData()
     }
+  }
 </script>
 
 <style scoped>
@@ -122,17 +121,17 @@
     font-size: .875rem;
     margin: 0.625rem;
   }
-li:not(:first-child){
-  background: #fff;
-  border-top: .0625rem solid #f0f0f0;
-  padding: 0.625rem;
-  font-size: .875rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  overflow: hidden;
-}
+  li:not(:first-child){
+    background: #fff;
+    border-top: .0625rem solid #f0f0f0;
+    padding: 0.625rem;
+    font-size: .875rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+  }
   .portrait{
     width: 1.875rem;
     height: 1.875rem;
