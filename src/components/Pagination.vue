@@ -67,6 +67,7 @@
     padding: .375rem 1.25rem;
     border-radius: .3125rem;
     border: .0625rem solid #888888;
+    user-select: none;  
   }
   li{
     display: inline;
