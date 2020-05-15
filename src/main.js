@@ -10,7 +10,9 @@ Vue.config.productionTip = false
 Vue.prototype.$http = axios
 /* eslint-disable no-new */
 
-Vue.use(VueLazyload)
+Vue.use(VueLazyload,{
+
+})
 
 
 Vue.filter('formatDate',(str)=>{

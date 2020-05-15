@@ -5,7 +5,9 @@
       <li @click="changeBtn">上一页</li>
       <li v-if="judge" class="pagebtn">...</li>
       <li v-for="btn in pagebtns"
-          :class="[{currentPage:btn == currentPage},'pagebtn']" @click="changeBtn(btn)" :ref="'btn' + btn">{{btn}}</li>
+          :class="[{currentPage:btn == currentPage},
+          'pagebtn']" @click="changeBtn(btn)"
+          :ref="'btn' + btn" :key="btn">{{btn}}</li>
       <li class="pagebtn">...</li>
       <li @click="changeBtn">下一页</li>
     </ul>
@@ -34,6 +36,7 @@
                 break;
                 case '首页':
                   this.$refs[`btn1`][0].click()
+                break;
             }
             return
           }
